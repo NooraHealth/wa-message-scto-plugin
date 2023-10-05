@@ -4,6 +4,10 @@ This plugin simplifies the process of connecting the [Turn platform](https://www
 
 ![](extras/plugin-preview.png)
 
+## Download
+
+[![Download now](extras/download-button.png)](exotel-dialer.fieldplugin.zip)
+
 
 ## Required parameters
 
