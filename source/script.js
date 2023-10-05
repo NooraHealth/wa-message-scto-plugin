@@ -131,12 +131,12 @@ function apiCall() {
                 if (request.status == 200) {
                     try {
                         var response = JSON.parse(request.responseText);
-                        setResult("success", "Success", "Whatsapp Nudge sent successfully")
-                        setAnswer("Yes")
+                        setResult("success", "Success", "Whatsapp Nudge sent successfully");
+                        setAnswer("Yes");
                     }
                     catch {
-                        setResult("danger", "Failure", "Error occured while parsing response")
-                        setAnswer("No")
+                        setResult("danger", "Failure", "Error occured while parsing response");
+                        setAnswer("No");
                     }
                 }
                 else if (request.status == 400) {
@@ -145,24 +145,26 @@ function apiCall() {
                 }
                 else if (request.status == 403) {
                     setResult("danger", "Failure", request.responseText);
+                    setAnswer("No");
                 }
                 else if (request.status == 404) {
-                    setResult("danger", "Failure", "Server returned 404")
-                    setAnswer("No")
+                    setResult("danger", "Failure", "Server returned 404");
+                    setAnswer("No");
                 }
                 else if (request.status == 500) {
-                    setResult("danger", "Failure", "Server returned 500")
-                    setAnswer("No")
+                    setResult("danger", "Failure", "Server returned 500");
+                    setAnswer("No");
                 }
             }
         }
         request.onerror = function () {
-            setResult("danger", "Failure", "Network Error, please check your internet connection!")
-            setAnswer("No")
+            setResult("danger", "Failure", "Network Error, please check your internet connection!");
+            setAnswer("No");
         }
 
         request.send(JSON.stringify(payload));
     } catch (error) {
         setResult("danger", "Failure", error);
+        setAnswer("No");
     }
 }
