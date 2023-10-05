@@ -131,7 +131,7 @@ function apiCall() {
                 if (request.status == 200) {
                     try {
                         var response = JSON.parse(request.responseText);
-                        setResult("success", "Success", "Whatsapp Nudge sent successfully");
+                        setResult("success", "Success", "Whatsapp Message sent successfully");
                         setAnswer("Yes");
                     }
                     catch {
