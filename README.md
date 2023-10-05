@@ -1,5 +1,5 @@
 # Whatsapp Template Message Plugin
-This plugin simplifies the process of connecting the Turn platform to your SurveyCTO forms, allowing you to send WhatsApp template messages effortlessly. It enables you to send preapproved template messages to WhatsApp users, facilitating friendly reminders and promoting interaction with your WhatsApp service. This engagement, in turn, enhances participant engagement and improves data quality.
+This plugin simplifies the process of connecting the [Turn platform](https://www.turn.io/) to your SurveyCTO forms, allowing you to send WhatsApp template messages effortlessly. It enables you to send pre-approved template messages to WhatsApp users, facilitating friendly reminders and promoting interaction with your WhatsApp service. This engagement, in turn, enhances participant engagement and improves data quality.
 
 
 ![](extras/plugin-preview.png)
@@ -7,14 +7,14 @@ This plugin simplifies the process of connecting the Turn platform to your Surve
 
 ## Required parameters
 
-| Key                   | Value                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `phoneNumber`         | This is the phone number that will receive the WhatsApp template message.                                              |
-| `apiUrl`              | This is the URL of the API endpoint that will be invoked to send the WhatsApp message.                                 |
-| `apiToken`            | This is the authentication token for the Turn Account associated with the WhatsApp Line where the template is located. |
-| `whatsappNamespaceId` | This is the WhatsApp Namespace ID where the template message is located.                                               |
-| `whatsappTemplateId`  | This is the WhatsApp Template Message ID, which will be used for sending a message to the user on WhatsApp.            |
-| `language`            | This language code specifies the language in which the template message should be sent.                                |
+| Key                   | Value                                                                                                                                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `phoneNumber`         | This is the phone number that will receive the WhatsApp template message.                                                                      |
+| `apiUrl`              | This is the URL of the API endpoint that will be invoked to send the WhatsApp message.                                                         |
+| `apiToken`            | This is the authentication token for the [Turn](https://www.turn.io/) Account associated with the WhatsApp Line where the template is located. |
+| `whatsappNamespaceId` | This is the WhatsApp Namespace ID where the template message is located.                                                                       |
+| `whatsappTemplateId`  | This is the WhatsApp Template Message ID, which will be used for sending a message to the user on WhatsApp.                                    |
+| `language`            | This language code specifies the language in which the template message should be sent.                                                        |
 
 ### Turn API and other credentials 
 To access all Turn API credentials, follow these steps:
