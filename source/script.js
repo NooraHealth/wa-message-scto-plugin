@@ -11,7 +11,7 @@ var answerState = document.getElementById("answerState");
 // References to values stored in the plug-in parameters
 var pPhoneNumber = getPluginParameter('phoneNumber');
 var pNamespace = getPluginParameter('whatsappNamespaceId');
-var pTempalteId = getPluginParameter('whatsappTemplateId');
+var pTemplateId = getPluginParameter('whatsappTemplateId');
 var pLanguage = getPluginParameter('language');
 var apiUrl = getPluginParameter('apiUrl');
 var apiToken = getPluginParameter('apiToken');
@@ -119,11 +119,11 @@ function apiCall() {
             namespace: pNamespace,
             number: pPhoneNumber,
             languageCode: pLanguage,
-            tempalteId: pTempalteId
+            templateId: pTemplateId
         })
 
         request.open('POST', apiUrl, true)
-        request.setRequestHeader('Content-type', ' application/json')
+        request.setRequestHeader('Content-Type', 'application/json')
         request.setRequestHeader('Authorization', 'Bearer ' + apiToken)
 
         request.onreadystatechange = function () {
