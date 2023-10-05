@@ -143,6 +143,9 @@ function apiCall() {
                     var response = JSON.parse(request.responseText);
                     processError(response);
                 }
+                else if (request.status == 403) {
+                    setResult("danger", "Failure", request.responseText);
+                }
                 else if (request.status == 404) {
                     setResult("danger", "Failure", "Server returned 404")
                     setAnswer("No")
