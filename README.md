@@ -18,3 +18,4 @@ To access all Turn API credentials, follow these steps:
 4. Locate and click the 'Create a Token' button.
 5. Set the name for the token as 'SCTO WA Nudge Plugin.'
 6. Ensure you set an expiry date well into the future to prevent it from expiring during the SurveyCTO survey's active period.
+7. The value you'll obtain here will be used for `apiToken` field.
