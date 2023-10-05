@@ -13,6 +13,7 @@ var pPhoneNumber = getPluginParameter('phoneNumber');
 var pNamespace = getPluginParameter('whatsappNamespaceId');
 var pTemplateId = getPluginParameter('whatsappTemplateId');
 var pLanguage = getPluginParameter('language');
+var pCountryCode = getPluginParameter('countryCode');
 var apiUrl = getPluginParameter('apiUrl');
 var apiToken = getPluginParameter('apiToken');
 var currentAnswer = fieldProperties.CURRENT_ANSWER;
@@ -117,7 +118,7 @@ function apiCall() {
         request = makeHttpObject()
         payload = createPayload({
             namespace: pNamespace,
-            number: pPhoneNumber,
+            number: pCountryCode + pPhoneNumber,
             languageCode: pLanguage,
             templateId: pTemplateId
         })
