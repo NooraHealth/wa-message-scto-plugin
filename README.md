@@ -6,7 +6,7 @@ This plugin simplifies the process of connecting the [Turn platform](https://www
 
 ## Download
 
-[![Download now](extras/download-button.png)](exotel-dialer.fieldplugin.zip)
+[![Download now](extras/download-button.png)](wa-message.fieldplugin.zip)
 
 
 ## Required parameters
