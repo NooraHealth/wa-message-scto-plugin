@@ -38,4 +38,4 @@ To access all Turn API credentials, follow these steps:
 
 ## Developer Notes
 
-**Templates with Variables**: In case you want to use any template with variables in it, you'll need to modify the `createPayload` method in `script.js` and similarly collect variable values from users if needed through a form input. Pass these variables to the plugin definition and obtain them in `script.js` using `getPluginParameter`.
+**Templates with Variables**: In case you want to use any template with variables in it, you'll need to modify the `createPayload` method in [`script.js`](./source/script.js) and similarly collect variable values from users if needed through a form input. Pass these variables to the plugin definition and obtain them in `script.js` using `getPluginParameter`.
