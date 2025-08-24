@@ -14,7 +14,7 @@ This plugin simplifies the process of connecting the [Turn platform](https://www
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `phoneNumber`         | This is the phone number that will receive the WhatsApp template message.                                                                                                                              |
 | `countryCode`         | This is the country code for the phone number. It will be automatically added to the phone number when sending a message on WhatsApp using that specific form. For example, it could be `91` or `880`. |
-| `apiUrl`              | This is the URL of the API endpoint that will be invoked to send the WhatsApp message.                                                                                                                 |
+| `apiUrl`              | This is the URL of the API endpoint that will be invoked to send the WhatsApp message. Can be set to `https://whatsapp.turn.io/v1/messages`.                                                                                                                 |
 | `apiToken`            | This is the authentication token for the [Turn](https://www.turn.io/) Account associated with the WhatsApp Line where the template is located.                                                         |
 | `whatsappNamespaceId` | This is the WhatsApp Namespace ID where the template message is located.                                                                                                                               |
 | `whatsappTemplateId`  | This is the WhatsApp Template Message ID, which will be used for sending a message to the user on WhatsApp.                                                                                            |
@@ -35,3 +35,7 @@ To access all Turn API credentials, follow these steps:
 
 * **Test form**:
   [Sample WA Message Plugin Form](./extras/test-form/wa-message-plugin-demo.xlsx)
+
+## Developer Notes
+
+**Templates with Variables**: In case you want to use any template with variables in it, you'll need to modify the `createPayload` method in `script.js` and similarly collect variable values from users if needed through a form input. Pass these variables to the plugin definition and obtain them in `script.js` using `getPluginParameter`.
