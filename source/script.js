@@ -19,11 +19,9 @@ var apiToken = getPluginParameter('apiToken');
 var currentAnswer = fieldProperties.CURRENT_ANSWER;
 
 
-phoneNumber.innerText = pPhoneNumber;
+phoneNumber.innerText = pCountryCode + pPhoneNumber;
 language.innerText = pLanguage;
 setCurrentStatus();
-
-
 
 // Define the button press event
 signUpBtn.onclick = function () {
@@ -32,7 +30,7 @@ signUpBtn.onclick = function () {
 
 function processError(data) {
     var response = data;
-    errorReason = response.json()['errors'][0]['details'];
+    errorReason = response['errors'][0]['details'];
     var status = 'Failure';
     var statusClass = 'danger';
     setResult(statusClass, status, errorReason)
@@ -52,6 +50,33 @@ function makeHttpObject() {
 
     throw new Error('Could not create HTTP request object.')
 }
+
+function formatDateTime(date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear(),
+      hours = '' + d.getHours(),
+      minutes = '' + d.getMinutes();
+  
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+  
+    if (month.length < 2)
+      month = '0' + month;
+    if (day.length < 2)
+      day = '0' + day;
+    if (hours.length < 2)
+      hours = '0' + hours;
+    if (minutes.length < 2)
+      minutes = '0' + minutes;
+  
+    return [day, month, year].join('-') + ' ' + strTime;
+}
+
 
 function setResult(resultClass, resultText, reason = null) {
     t1 = result.classList.replace("danger", resultClass);
@@ -115,8 +140,8 @@ function createPayload(data) {
 
 function apiCall() {
     try {
-        request = makeHttpObject()
-        payload = createPayload({
+        var request = makeHttpObject()
+        var payload = createPayload({
             namespace: pNamespace,
             number: pCountryCode + pPhoneNumber,
             languageCode: pLanguage,
